@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:books="http://www.example.com/books" xmlns:magazines="http://www.example.com/magazines">
+    <books:book>
+        <books:title>Effective Java</books:title>
+        <books:author>Joshua Bloch</books:author>
+        <books:isbn>978-0134685991</books:isbn>
+    </books:book>
+    <magazines:magazine>
+        <magazines:title>National Geographic</magazines:title>
+        <magazines:issue>July 2024</magazines:issue>
+    </magazines:magazine>
+</library>

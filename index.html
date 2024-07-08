@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<library>
+    <book>
+        <title>Effective Java</title>
+        <author>Joshua Bloch</author>
+        <isbn>978-0134685991</isbn>
+    </book>
+    <book>
+        <title>Clean Code</title>
+        <author>Robert C. Martin</author>
+        <isbn>978-0132350884</isbn>
+    </book>
+</library>
+
+<script>
+    const parser = new DOMParser();
+    const xmlString = `
+    <library>
+        <book>
+            <title>Effective Java</title>
+            <author>Joshua Bloch</author>
+            <isbn>978-0134685991</isbn>
+        </book>
+        <book>
+            <title>Clean Code</title>
+            <author>Robert C. Martin</author>
+            <isbn>978-0132350884</isbn>
+        </book>
+    </library>`;
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+    const titles = xmlDoc.evaluate('//book/title', xmlDoc, null, XPathResult.ANY_TYPE, null);
+    let result = titles.iterateNext();
+    while (result) {
+        console.log(result.textContent);
+        result = titles.iterateNext();
+    }
+</script>
+
+</body>
+</html>
